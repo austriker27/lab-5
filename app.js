@@ -27,9 +27,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 function multiply(a,b){ //eslint-disable-line
-  var product = a * b;
-  var output = 'The product of ' + a + ' and ' + b + ' is ' + product + '.';
-  return [product, output];
+  var result = a * b;
+  var output = 'The product of ' + a + ' and ' + b + ' is ' + result + '.';
+  return [result, output];
 }
 
 // TODO: Here is the test for multiply(); uncomment it to run it
@@ -47,11 +47,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-
+  var newerSum = sum(a,b)[0];
+  var newestSum = sum(newerSum,c)[0]; //returns a result of multiplying them into sum[0]
+  var newerProd = multiply(a,b)[0];
+  var newestProd = multiply(newerProd,c)[0];
+  var thirdElement = a + ' and ' + b + ' and ' + c + ' sum to ' + newestSum + '.';
+  var fourthElement = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + newestProd + '.';
+  return [newestSum, newestProd, thirdElement, fourthElement];
 }
 
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
